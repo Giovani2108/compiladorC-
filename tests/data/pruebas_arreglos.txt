@@ -1,0 +1,56 @@
+// CASO 1: Arreglo Correcto
+// DESCRIPCION: Declaración y uso válido de arreglos.
+int main() {
+    int arreglo[10];
+    for( int x=0;x<5;x++ ){
+        if(x<10){
+            arreglo[x]=x+1;
+        }
+    }
+}
+// SALIDA ESPERADA:
+// [SUCCESS]
+
+// CASO 2: Declaración Incorrecta (Falta tamaño)
+// DESCRIPCION: int arreglo[]; no es válido.
+int main() {
+    int arreglo[];
+    for( int x=0;x<5;x++ ){
+        if(x<10){
+            arreglo[x]=x+1;
+        }
+    }
+}
+// SALIDA ESPERADA:
+// [ERROR] Error semántico: Declaración de arreglo inválida 'arreglo[]'. Se espera 'nombre[numero]'.
+
+// CASO 3: Sintaxis Incorrecta (Orden invertido)
+// DESCRIPCION: int [10] arreglo; no es válido.
+int main() {
+    int [10] arreglo;
+    for( int x=0;x<5;x++ ){
+        if(x<10){
+            arreglo[x]=x+1;
+        }
+    }
+}
+// SALIDA ESPERADA:
+// [ERROR] Error sintáctico
+
+// CASO 4: Uso de arreglo no declarado
+// DESCRIPCION: Asignación a arreglo no declarado.
+int main() {
+    int x=0;
+    no_existe[x] = 5;
+}
+// SALIDA ESPERADA:
+// [ERROR] Error: arreglo 'no_existe' usado sin declarar.
+
+// CASO 5: Índice con variable no declarada
+// DESCRIPCION: arreglo[y] donde y no existe.
+int main() {
+    int arreglo[10];
+    arreglo[y] = 5;
+}
+// SALIDA ESPERADA:
+// [ERROR] Error: variable 'y' en índice de arreglo no declarada.

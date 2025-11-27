@@ -1,0 +1,66 @@
+// ==========================================
+// SET DE PRUEBAS - BUCLES ANIDADOS
+// ==========================================
+
+// ------------------------------------------
+// CASO 1: While con If Anidado (Correcto)
+// Regla: while( variable operador constante ) { if( ... ) { ... } }
+// ------------------------------------------
+int main() {
+    int x = 0;
+    while( x < 5 ){ 
+        if( x == 1 ){
+            cout << x;
+        }
+        x++;
+    }
+}
+// SALIDA ESPERADA: [SUCCESS]
+
+// ------------------------------------------
+// CASO 2: For con If Anidado (Correcto)
+// ------------------------------------------
+int main() {
+    for( int x=0;x<5;x++ ){ 
+        if(x==1){
+            cout<<x;
+            cout << x;
+        }
+    }
+}
+*/
+// SALIDA ESPERADA: [ERROR] Se esperaba '{' ...
+
+// ------------------------------------------
+// CASO 5: For Incorrecto (Sintaxis extraña del usuario)
+// ( x=0;x<5;x++ int )for{
+// (x==1)If{
+// x<<cout;
+// } . }
+// ------------------------------------------
+/*
+int main() {
+    ( x=0;x<5;x++ int )for{ 
+        (x==1)If{
+            x<<cout;
+        } 
+    }
+}
+*/
+// NOTA: El usuario puso ejemplos de sintaxis incorrecta.
+// (x==1)If no es válido en C++ ni en nuestras reglas previas.
+// x<<cout es cout al revés.
+// SALIDA ESPERADA: [ERROR] Múltiples errores sintácticos.
+
+// ------------------------------------------
+// CASO 6: For Incorrecto (Falta punto y coma en cout)
+// ------------------------------------------
+/*
+int main() {
+    for( int x=0;x<5;x++ ){
+        if(x==1)
+            cout<<x
+    }
+}
+*/
+// SALIDA ESPERADA: [ERROR] Se esperaba ';' ...
